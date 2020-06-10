@@ -29,4 +29,12 @@ class Waiter
         self.meals.max {|a,b| a.tip <=> b.tip}.customer
     end
 
+    def most_frequent_customer
+        self.customers.max_by {|customer| self.customers.count(customer)}
+    end
+
+    def worst_tip_meal
+        self.meals.min_by {|meal| meal.tip}
+    end
+
 end
